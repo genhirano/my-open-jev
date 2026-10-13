@@ -4,7 +4,7 @@
 
 ## 起動
 
-Docker Desktop を起動し、Linux コンテナーモードで使用してください。PowerShell でプロジェクトのディレクトリに移動して実行します。
+この README の手順は Windows 向けです。Docker Desktop を起動し、Linux コンテナーモードで使用してください。PowerShell でプロジェクトのディレクトリに移動して実行します。
 
 GPU と CPU の 2 つのサービスがあり、**NVIDIA GPU がある環境では GPU モードを推奨**します。どちらも同じポート（8791）を使うため、同時には起動できません。
 
@@ -16,7 +16,6 @@ GPU と CPU の 2 つのサービスがあり、**NVIDIA GPU がある環境で�
 
 - NVIDIA GPU と最新の NVIDIA ドライバー
 - Docker Desktop の WSL2 バックエンド（コンテナーから GPU が使える状態）
-- Linux の場合は NVIDIA Container Toolkit
 
 ```powershell
 Set-Location C:\dev\my-open-jev
