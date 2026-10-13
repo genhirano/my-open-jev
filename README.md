@@ -32,7 +32,7 @@ docker compose ps open-jev
 補足:
 
 - GPU メモリ不足になる場合は、`JEV_BATCH_SIZE`（既定 32）を下げてください。例: `$env:JEV_BATCH_SIZE = "8"; docker compose up -d open-jev`
-- ドライバーが古く、既定の CUDA 12.8 版が動かない場合は、`docker build --build-arg TORCH_INDEX_URL=https://download.pytorch.org/whl/cu126 -t open-jev:2b .` のように別の CUDA 版でビルドできます。
+- ドライバーが古く、既定の CUDA 12.8 版が動かない場合は、`docker build --build-arg TORCH_INDEX_URL=https://download.pytorch.org/whl/cu126 -t open-jev:2b .; docker compose up -d open-jev` のように別の CUDA 版をビルドしてから、`--build` を付けずに起動できます。再ビルド時も同じビルド引数を指定してください。
 - `could not select device driver "nvidia"` と表示される場合は、コンテナーから GPU を使う環境が整っていません。環境を確認するか、下記の CPU モードを使用してください。
 - 設定項目の詳細は [Docker ガイド](docker/README.md) を参照してください。
 
