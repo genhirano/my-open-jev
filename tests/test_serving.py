@@ -77,6 +77,13 @@ class ServingTest(unittest.TestCase):
                 self.assertIn(b'workbench', response.read())
             with urlopen(base + "/examples/workbench/logic.mjs") as response:
                 self.assertIn(b'parseCSV', response.read())
+            with urlopen(base + "/examples/systemone/index.html") as response:
+                page = response.read()
+                self.assertIn("state".encode(), page)
+                self.assertIn("questions".encode(), page)
+                self.assertIn("レスポンス JSON".encode(), page)
+            with urlopen(base + "/examples/systemone/app.mjs") as response:
+                self.assertIn(b"makeRequest", response.read())
             for body, headers, code in [(b'{"state":NaN}', {}, 422),
                                         (json.dumps(request()).encode(), {"Origin": "https://outside.invalid"}, 403)]:
                 req = Request(base + "/v1/inference", body,
