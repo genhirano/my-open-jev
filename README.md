@@ -43,7 +43,7 @@ Set-Location C:\dev\my-open-jev
 docker compose up -d --build open-jev-cpu
 ```
 
-CPU 推論は GPU よりかなり遅くなります。モデルのロードにも時間がかかるため、次のコマンドで `open-jev-cpu` が `healthy` になるまで待ってください（初回は最大 15 分程度）。
+CPU 推論は GPU よりかなり遅くなります。モデルのロードにも時間がかかるため、次のコマンドで `open-jev-cpu` が `healthy` になるまで待ってください。初回ロードに備え、ヘルスチェックには 15 分の起動猶予を設定しています。
 
 ```powershell
 docker compose ps open-jev-cpu
