@@ -1,26 +1,26 @@
 {
-  "state": "A customer says: I was charged twice for one order. The service is working normally. There is no sign of unauthorized access.",
+  "state": "顧客からの問い合わせ：1件の注文に対して二重に請求されました。サービスは正常に動作しています。不正アクセスの兆候はありません。",
   "questions": {
-    "route": {
+    "担当チーム": {
       "type": "choice",
-      "instructions": "Which team should handle this issue?",
+      "instructions": "この問い合わせはどの担当チームが対応すべきですか？",
       "criteria": {
-        "billing": "Problems with charges, invoices, refunds or payments.",
-        "security": "Unauthorized access or account compromise.",
-        "technical": "Service unavailable or a software malfunction."
+        "請求担当": "請求、請求書、返金、支払いに関する問題。",
+        "セキュリティ担当": "不正アクセスやアカウントの侵害。",
+        "技術担当": "サービスの停止やソフトウェアの不具合。"
       }
     },
-    "refund_review": {
+    "二重請求の確認": {
       "type": "noul",
-      "instructions": "Does this message describe a duplicate charge?"
+      "instructions": "この問い合わせには二重請求が記載されていますか？"
     },
-    "urgency": {
+    "緊急度": {
       "type": "score",
-      "instructions": "Assess the urgency using only the given evidence.",
+      "instructions": "記載された情報だけを使って緊急度を評価してください。",
       "criteria": [
-        "Routine: no service disruption or active security compromise is reported.",
-        "Urgent: an ongoing service disruption is reported.",
-        "Critical: active unauthorized access is reported."
+        "通常：サービスの停止や進行中のセキュリティ侵害は報告されていません。",
+        "緊急：サービスの停止が継続していると報告されています。",
+        "重大：不正アクセスが進行中であると報告されています。"
       ]
     }
   }

@@ -103,7 +103,7 @@ class SpaceHTTPTest(unittest.TestCase):
                     self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
         status, _, headers = self.request("/examples/index.html")
         self.assertEqual(status, 307)
-        self.assertEqual(headers["Location"], "https://github.com/Zefan-Cai/Open-Jev/blob/main/README.md#typed-decisions")
+        self.assertEqual(headers["Location"], "https://github.com/Zefan-Cai/Open-Jev/blob/main/jev/api.py")
         for path in ("/not-public.txt", "/examples/workbench/not-public.txt", "/examples/workbench/../not-public.txt"):
             self.assertEqual(self.request(path)[0], 404)
 
